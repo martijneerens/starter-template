@@ -2,6 +2,7 @@
 
 A [Nuxt.js](https://github.com/nuxt/nuxt.js) starter project template for Volkskrant productions.
 
+[Nuxt documentation](https://nuxtjs.org/guide).
 
 ## Prerequisites
 
