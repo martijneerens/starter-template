@@ -40,6 +40,18 @@ module.exports = {
             'message': 'Directus project id',
             'default': 1
         },
+        loader_background: {
+            'type': 'int',
+            'required': false,
+            'message': 'Loader background color',
+            'default': '#d3d3d3'
+        },
+        loader_text: {
+            'type': 'int',
+            'required': false,
+            'message': 'Loader text color',
+            'default': '#000'
+        },
         author: {
             'type': 'string',
             'message': 'Author'
