@@ -1,8 +1,7 @@
 # Starter
 
-A [Nuxt.js](https://github.com/nuxt/nuxt.js) starter project template without the distraction of a complicated development environment.
+A [Nuxt.js](https://github.com/nuxt/nuxt.js) starter project template for Volkskrant productions.
 
-Live demo: https://starter.nuxtjs.org
 
 ## Prerequisites
 
@@ -13,7 +12,7 @@ Make sure to have `node 8.0+` and `npm 5.0+` installed
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ``` bash
-$ vue init nuxt-community/starter-template my-project  
+$ vue init martijneerens/vk-nuxt-template my-project  
 $ cd my-project                     
 # install dependencies
 $ npm install # Or yarn install
@@ -27,7 +26,7 @@ $ npm install # Or yarn install
 
 ``` bash
 # serve with hot reloading at localhost:3000
-$ npm run dev
+$ yarn dev
 ```
 
 Go to [http://localhost:3000](http://localhost:3000)
@@ -36,13 +35,10 @@ Go to [http://localhost:3000](http://localhost:3000)
 
 ``` bash
 # build for production and launch the server
-$ npm run build
-$ npm start
+$ yarn build
 ```
 
-### Generate
-
 ``` bash
-# generate a static project
-$ npm run generate
+# fetch data and assets from cms
+$ yarn fetch
 ```
