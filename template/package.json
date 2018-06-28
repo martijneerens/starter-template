@@ -11,7 +11,8 @@
     "fetch": "node download.js",
     "build": "node download.js && cross-env NODE_ENV=production nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "postinstall": "node download.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
