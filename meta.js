@@ -56,11 +56,23 @@ module.exports = {
         console.log(JSON.stringify(data));
 
         logger.log(`To get started:`)
+
+        var process = require('process');
+        process.chdir(`./${data.name}`);
+        npmInstall();
+
         if (!data.inPlace) {
             logger.log(`cd ${chalk.yellow(data.destDirName)}`)
         }
-        logger.log(`npm install # Or yarn`)
-        logger.log(`npm run dev`)
+
+        if(data.pm === 'yarn'){
+            logger.log(`${chalk.cyan('yarn install')}`)
+            logger.log(`yarn dev`)
+        }
+        else{
+            logger.log(`${chalk.cyan('npm install')}`)
+            logger.log(`npm run dev`)
+        }
 
     }
 
