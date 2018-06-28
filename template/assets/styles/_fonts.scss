@@ -11,10 +11,10 @@ $font-sansserif: $font-benton;
 
 //to add a custom font, uncomment:
 
-/*
-$customFontName: 'CustomFontName';
-$font-custom: $customFontName , Helvetica, Arial, sans-serif;
-*/
+
+//$customFontName: 'CustomFontName';
+//$font-custom: $customFontName , Helvetica, Arial, sans-serif;
+
 
 
 $benton-font: (
@@ -48,15 +48,15 @@ $font-dir: '../fonts/';
 
 //to add a custom font, uncomment:
 
-/*
-@font-face {
-  font-family: $font-custom;
-  font-weight: normal;
-  font-style: normal;
-  src: url('#{$font-dir}#{$font-custom}.woff2') format('woff2'),
-  url('#{$font-dir}#{$font-custom}.woff') format('woff');
-}
-*/
+
+//@font-face {
+//  font-family: $font-custom;
+//  font-weight: normal;
+//  font-style: normal;
+//  src: url('#{$font-dir}#{$font-custom}.woff2') format('woff2'),
+//  url('#{$font-dir}#{$font-custom}.woff') format('woff');
+//}
+
 
 
 @each $id, $weight, $style in $benton-font {
