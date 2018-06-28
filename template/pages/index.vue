@@ -4,11 +4,8 @@
         <vk-header></vk-header>
 
         <div class="content">
-            <h1 class="title">
-                {{loadedMeta.title}}
-            </h1>
-            <h2 class="lead" v-html="loadedMeta.lead">
-            </h2>
+            <h1 class="title" v-html="loadedMeta.title"></h1>
+            <h2 class="lead" v-html="loadedMeta.lead"></h2>
         </div>
 
         <vk-footer
