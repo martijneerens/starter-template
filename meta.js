@@ -51,7 +51,7 @@ module.exports = {
             default: 'yarn'
         }
     },
-    complete(data, {logger, chalk}) {
+    complete(data, {logger, chalk, npmInstall, yarnInstall, gitInit }) {
 
         console.log(JSON.stringify(data));
 
