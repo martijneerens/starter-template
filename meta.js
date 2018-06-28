@@ -51,11 +51,12 @@ module.exports = {
             default: 'yarn'
         }
     },
-    completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}',
-    post(
+    // completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}',
+    complete(
         { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
         { meta }
     ) {
+        console.log('{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}');
         // gitInit()
 
         console.log(meta.answers.pm)
