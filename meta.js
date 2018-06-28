@@ -23,7 +23,12 @@ module.exports = {
             'default': 'Dit is een special over x.'
         },
         year: {
-            'type': 'string',
+            type: 'list',
+            choices: [
+                '2017',
+                '2018',
+                '2019'
+            ],
             'required': false,
             'message': 'year',
             'default': (new Date()).getFullYear()
