@@ -51,15 +51,10 @@ module.exports = {
             default: 'yarn'
         }
     },
-    complete(data, {logger, chalk, npmInstall, yarnInstall, gitInit }) {
 
-        console.log(JSON.stringify(data));
+    complete(data, {logger, chalk }) {
 
-        logger.log(`To get started:`)
-
-        var process = require('process');
-        process.chdir(`./${data.name}`);
-        npmInstall();
+        logger.log(chalk.bold(`  To get started:\n`));
 
         if (!data.inPlace) {
             logger.log(`cd ${chalk.yellow(data.destDirName)}`)
@@ -75,31 +70,4 @@ module.exports = {
         }
 
     }
-
-    // complete(
-    //     { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
-    //     { meta }
-    // ) {
-    //     console.log('{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}');
-    // gitInit()
-
-    // console.log(meta.answers.pm)
-    // if (meta.answers.pm === 'yarn') {yarnInstall()
-    // else npmInstall()
-
-    // const cd = () => {
-    //     if (isNewFolder) {
-    //         console.log(`    ${chalk.cyan('cd')} ${folderName}`)
-    //     }
-    // }
-
-    // console.log()
-    // console.log(chalk.bold(`  To get started:\n`))
-    // cd()
-    // console.log(`    yarn dev\n`)
-    // cd()
-    // console.log(`    npm run build`)
-    // console.log(`    npm start`)
-    // console.log()
-    // }
 };
