@@ -100,11 +100,11 @@
             url : {
                 type : String,
                 default() {
-                    if(window) {
-                        return window.location.href;
+                    if (typeof window === 'undefined') {
+                        return '';
                     }
                     else{
-                        return '';
+                        return window.location.href;
                     }
                 }
             }
