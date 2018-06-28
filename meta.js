@@ -51,31 +51,44 @@ module.exports = {
             default: 'yarn'
         }
     },
-    // completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}',
-    complete(
-        { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
-        { meta }
-    ) {
-        console.log('{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}');
-        // gitInit()
+    complete(data, {logger, chalk}) {
 
-        console.log(meta.answers.pm)
-        // if (meta.answers.pm === 'yarn') {yarnInstall()
-        // else npmInstall()
+        logger.log(`cd ${chalk.yellow(data)}`);
 
-        const cd = () => {
-            if (isNewFolder) {
-                console.log(`    ${chalk.cyan('cd')} ${folderName}`)
-            }
+
+        logger.log(`To get started:`)
+        if (!data.inPlace) {
+            logger.log(`cd ${chalk.yellow(data.destDirName)}`)
         }
+        logger.log(`npm install # Or yarn`)
+        logger.log(`npm run dev`)
 
-        console.log()
-        console.log(chalk.bold(`  To get started:\n`))
-        cd()
-        console.log(`    yarn dev\n`)
-        cd()
-        console.log(`    npm run build`)
-        console.log(`    npm start`)
-        console.log()
     }
+
+    // complete(
+    //     { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
+    //     { meta }
+    // ) {
+    //     console.log('{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}');
+    // gitInit()
+
+    // console.log(meta.answers.pm)
+    // if (meta.answers.pm === 'yarn') {yarnInstall()
+    // else npmInstall()
+
+    // const cd = () => {
+    //     if (isNewFolder) {
+    //         console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+    //     }
+    // }
+
+    // console.log()
+    // console.log(chalk.bold(`  To get started:\n`))
+    // cd()
+    // console.log(`    yarn dev\n`)
+    // cd()
+    // console.log(`    npm run build`)
+    // console.log(`    npm start`)
+    // console.log()
+    // }
 };
