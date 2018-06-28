@@ -53,8 +53,7 @@ module.exports = {
     },
     complete(data, {logger, chalk}) {
 
-        logger.log(`cd ${chalk.yellow(data)}`);
-
+        console.log(JSON.stringify(data));
 
         logger.log(`To get started:`)
         if (!data.inPlace) {
