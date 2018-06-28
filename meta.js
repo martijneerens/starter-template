@@ -23,12 +23,7 @@ module.exports = {
             'default': 'Dit is een special over x.'
         },
         year: {
-            type: 'list',
-            choices: [
-                '2017',
-                '2018',
-                '2019'
-            ],
+            'type': 'string',
             'required': false,
             'message': 'year',
             'default': (new Date()).getFullYear()
@@ -49,6 +44,37 @@ module.exports = {
             'type': 'string',
             'message': 'Author'
         },
+        pm: {
+            message: 'Choose a package manager',
+            choices: ['npm', 'yarn'],
+            type: 'list',
+            default: 'yarn'
+        }
     },
-    completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}'
+    completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}',
+    post(
+        { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
+        { meta }
+    ) {
+        // gitInit()
+
+        console.log(meta.answers.pm)
+        // if (meta.answers.pm === 'yarn') {yarnInstall()
+        // else npmInstall()
+
+        const cd = () => {
+            if (isNewFolder) {
+                console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+            }
+        }
+
+        console.log()
+        console.log(chalk.bold(`  To get started:\n`))
+        cd()
+        console.log(`    yarn dev\n`)
+        cd()
+        console.log(`    npm run build`)
+        console.log(`    npm start`)
+        console.log()
+    }
 };
