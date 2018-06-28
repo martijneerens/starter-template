@@ -11,5 +11,5 @@ npm-debug.log
 dist
 
 # application data from cms
-static/data
-static/media
+static/data/
+static/media/
