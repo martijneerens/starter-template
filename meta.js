@@ -32,7 +32,7 @@ module.exports = {
             'type': 'string',
             'required': false,
             'message': 'Directus content table name',
-            'default': 'producties'
+            'default': 'productions'
         },
         directus_project_id: {
             'type': 'int',
