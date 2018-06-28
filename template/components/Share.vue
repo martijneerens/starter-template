@@ -97,9 +97,16 @@
                 default: '~/assets/img/icon-twitter.svg'
             },
 
-            url: {
-                type: String,
-                default: window.location.href
+            url : {
+                type : String,
+                default() {
+                    if(window) {
+                        return window.location.href;
+                    }
+                    else{
+                        return '';
+                    }
+                }
             }
         }
     }

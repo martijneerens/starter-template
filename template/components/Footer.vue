@@ -33,10 +33,18 @@
     import { $ } from 'vklib';
     import VkShare from '~/components/Share.vue';
 
-    const shortname = $("body").getAttribute('data-track-app');
-    const pagetitle = $("title").textContent;
+    let shortname = '';
+    let pagetitle = '';
     let pageurl = '';
-    if(window){
+
+    if (typeof window === 'undefined') {
+        shortname = '';
+        pagetitle = '';
+        pageurl = '';
+    }
+    else{
+        shortname = $("body").getAttribute('data-track-app');
+        pagetitle = $("title").textContent;
         pageurl = window.location.href;
     }
 
