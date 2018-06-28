@@ -9,3 +9,7 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# application data from cms
+static/data
+static/media

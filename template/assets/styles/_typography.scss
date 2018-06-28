@@ -1,0 +1,33 @@
+//base type styles
+
+h1{
+  font-family: $font-capitolium-head;
+  font-size: 4rem;
+  color:$black;
+}
+h2{
+  font-family: $font-capitolium-head;
+  font-weight: lighter;
+  font-size: 2.2rem;
+}
+h3{
+  font-family: $font-benton;
+  font-size: 2.1rem;
+}
+h4{
+  font-family: $font-capitolium-head;
+  font-size: 1.8rem;
+}
+h5{
+  font-family: $font-capitolium-head;
+  font-size: 1.8rem;
+}
+p, ol li{
+  font-family: $font-capitolium-news;
+  line-height: 1.5;
+  a{
+    color:$c-5;
+    text-decoration: underline;
+  }
+}
+

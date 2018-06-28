@@ -65,17 +65,6 @@ module.exports = {
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
         ],
         script: [
-            //     {
-            //        innerHTML: '<!--    _      __   __   _ _       _                _\n' +
-            //        '         __| |___  \\ \\ / /__| | |__ __| |___ _ __ _ _ _| |_\n' +
-            //        '        / _` / -_)  \\ V / _ \\ | / /(_-< / / \'_/ _` | \' \\  _|\n' +
-            //        '        \\__,_\\___|   \\_/\\___/_|_\\_\\/__/_\\_\\_| \\__,_|_||_\\__|\n' +
-            //        '\n' +
-            //        '        Made in Amsterdam\n' +
-            //        '        (c) de Volkskrant Crossmedia < volkskrant.nl/kijkverder > -->',
-            // body: false,
-            //         __dangerouslyDisableSanitizers: ['script']
-            //     },
             { innerHTML: '// Chartbeat\n' +
                 'window._sf_startpt = +new Date();\n' +
                 '\n' +
