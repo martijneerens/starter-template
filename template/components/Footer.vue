@@ -55,12 +55,12 @@
         props : {
             credits: {
                 type: String,
-                required: true
+                default: 'please enter credits'
             },
 
             cta: {
                 type: String,
-                required: true
+                default: 'please enter cta'
             },
 
             facebookIcon: {
