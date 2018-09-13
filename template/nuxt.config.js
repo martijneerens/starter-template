@@ -49,6 +49,7 @@ module.exports = {
         bodyAttrs: {
             'data-track-app' : pkg.name
         },
+        base: { target: '_blank'},
         meta: [
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
