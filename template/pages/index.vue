@@ -1,35 +1,32 @@
 <template>
-
     <section class="container">
-        <vk-header></vk-header>
+        <vk-nav />
 
-        <div class="content">
-            <h1 class="title" v-html="loadedMeta.title"></h1>
-            <h2 class="lead" v-html="loadedMeta.lead"></h2>
-        </div>
+        <main class="content">
+            <h1 class="title" v-html="meta.title"></h1>
+            <h2 class="lead" v-html="meta.lead"></h2>
+        </main>
 
         <vk-footer
-                :credits="loadedMeta.credits"
-                :cta="loadedMeta.cta"
-                :shortname="loadedMeta.name"
-                :pagetitle="loadedMeta.title"></vk-footer>
+                :credits="meta.credits"
+                :cta="meta.cta"
+                :shortname="meta.name"
+                :pagetitle="meta.title" />
     </section>
 </template>
 
 <script>
-    import {mapGetters} from 'vuex';
-    import {
-        track
-    } from 'vklib';
+    import { mapState } from 'vuex';
+    import { track } from 'vklib';
 
-    import VkHeader from '~/components/Header.vue';
+    import VkNav from '~/components/Vk-nav.vue';
     import VkFooter from '~/components/Footer.vue';
 
     export default {
         name: 'HomeScreen',
 
         components: {
-            VkHeader,
+            VkNav,
             VkFooter
         },
 
@@ -40,9 +37,8 @@
         },
 
         computed: {
-            ...mapGetters([
-                'loadedMeta',
-                'loadedItems'
+            ...mapState([
+                'meta', 'items'
             ])
         },
 

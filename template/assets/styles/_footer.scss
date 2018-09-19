@@ -1,7 +1,20 @@
-.vk-footer .vk-share__buttons > a {
-  background:transparent;
-}
-.vk-footer .vk-footer__section.vk-footer__cta p{
-  font-family: $font-benton;
-}
+// Project-specific footer scss
 
+$footer-bg: $black;
+$footer-color: $white;
+
+footer {
+    color: $footer-color;
+    background-color: $footer-bg;
+
+    p, .footer-subscribe p, .subscribe-link, .socials p {
+        color: $footer-color
+    }
+
+    svg {
+        path {
+            fill: $footer-color;
+            stroke: $footer-color
+        }
+    }
+}

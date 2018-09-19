@@ -1,0 +1,39 @@
+// Set REM here
+
+html {
+    font-size: $font-size-base;
+
+    @include respond-until($screen-sm) {
+        font-size: $font-size-small;
+    }
+
+    @media (max-height: $screen-small-height) {
+        font-size: $font-size-small;
+    }
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $font-serif-text;
+  font-size: 2rem;
+
+  /* Better Font Rendering =========== */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  position: relative;
+  box-sizing:border-box;
+}
+
+// These elements don't inherit the font styles by default
+
+input, select, textarea, button {
+    font: inherit;
+}
+
+img {
+    border: 0; // Be kind for IE9
+}

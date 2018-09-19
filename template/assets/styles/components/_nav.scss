@@ -1,0 +1,32 @@
+.vk-nav-top-wrapper {
+    @include wh(100vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    background: $white;
+}
+
+.vk-nav-top {
+    @include wh(100%, 80px);
+    max-width: 120rem;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+        @include wh(200px, auto)
+    }
+
+    .vk-menu-toggle {
+        @include wh(30px);
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+}

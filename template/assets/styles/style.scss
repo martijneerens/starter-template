@@ -1,18 +1,27 @@
-//global styling, not component specific
-@import "fonts";
+// Global styling, not component specific
+@import "base/values";
 @import "values";
-@import "mixins";
+@import "base/breakpoints";
+@import "base/reset";
+@import "base/fonts";
+@import "colors";
+@import "base/mixins";
+@import "base/typography";
+@import "base/base";
 
-@import "../../node_modules/valenski/values";
-@import "../../node_modules/valenski/mixins";
-@import "../../node_modules/valenski/reset";
-@import "base";
+// Styling for fixed components
 
-@import "../../node_modules/vklib/vue/vk-cta";
-@import "../../node_modules/vklib/vue/vk-feedback";
-@import "../../node_modules/vklib/vue/vk-footer";
-@import "transitions";
-@import "typography";
-@import "screen-home";
-@import "header";
+@import "components/nav";
+@import "components/footer";
+@import "components/buttons"; // Still apply class .vk-button!
+
+// Project specific styling
+
 @import "footer";
+@import "transitions";
+@import "screen-home";
+
+// TO BE FIXED: ADD THESE ELEMENTS
+
+//@import "../../node_modules/vklib/vue/vk-cta";
+//@import "../../node_modules/vklib/vue/vk-feedback";

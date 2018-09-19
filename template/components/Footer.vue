@@ -1,104 +1,86 @@
 <template>
-    <footer class="vk-footer">
-        <section class="vk-footer__section">
-            <a v-bind:href="vkhomelink"
-               class="vk-footer__vklogo">
-                <img src="~/assets/img/volkskrant-white.svg"
-                     alt="Logo van de Volkskrant" />
-            </a>
+    <footer :style="footerBackground">
+       <div class="footer-credits">
+           <a class="vk-footer__logo" v-bind:href="meta.slug">
+               <vk-logo :color="color" />
+           </a>
+       </div>
 
-            <p class="vk-footer__credits"
-               v-html="credits"></p>
-        </section>
+       <img src="~/assets/img/footerdivider.png" class="footer-divider">
 
-        <hr class="vk-footer__hr" />
+       <div class="footer-subscribe">
+           <div class="subscribe-text" v-html="meta.footercta"></div>
+           <a class="subscribe-link" href="" target="_blank">{{meta.cta}}</a>
+       </div>
 
-        <section class="vk-footer__section vk-footer__cta"
-                 v-html="cta">
-        </section>
+       <img src="~/assets/img/footerdivider.png" class="footer-divider">
 
-        <hr class="vk-footer__hr" />
-
-        <section class="vk-footer__section">
-            <vk-share
-                    title="Deel dit"
-                    :mail-subject="pagetitle"
-                    :mail-text="url"
-                    :text="pagetitle"></vk-share>
-        </section>
+       <div class="socials">
+           <p class="socialtext">Volg ons</p>
+           <div class="social-icons">
+               <a v-bind:href="'https://twitter.com/volkskrant'"
+               target="_blank">
+                   <twitter-icon :color="color"/>
+               </a>
+               <a v-bind:href="'https://www.facebook.com/volkskrant'"
+               target="_blank">
+                   <facebook-icon :color="color"/>
+               </a>
+               <a v-bind:href="'https://www.instagram.com/de_volkskrant/'"
+               target="_blank">
+                   <instagram-icon :color="color"/>
+               </a>
+               <a v-bind:href="'https://soundcloud.com/volkskrant'"
+               target="_blank">
+                   <soundcloud-icon :color="color"/>
+               </a>
+               <a v-bind:href="'https://itunes.apple.com/nl/podcast/het-volkskrantgeluid/id1233650827?mt=2'"
+               target="_blank">
+                   <podcast-icon :color="color"/>
+               </a>
+           </div>
+       </div>
     </footer>
 </template>
 
 <script>
-    import { $ } from 'vklib';
-    import VkShare from '~/components/Share.vue';
-
-    let shortname = '';
-    let pagetitle = '';
-    let pageurl = '';
-
-    if (typeof window === 'undefined') {
-        shortname = '';
-        pagetitle = '';
-        pageurl = '';
-    }
-    else{
-        shortname = $("body").getAttribute('data-track-app');
-        pagetitle = $("title").textContent;
-        pageurl = window.location.href;
-    }
+    import { mapState } from 'vuex';
+    import VkLogo from '~/components/svg/Vk-logo.vue';
+    import TwitterIcon from '~/components/svg/Twitter-icon.vue';
+    import FacebookIcon from '~/components/svg/Facebook-icon.vue';
+    import InstagramIcon from '~/components/svg/Instagram-icon.vue';
+    import SoundcloudIcon from '~/components/svg/Soundcloud-icon.vue';
+    import PodcastIcon from '~/components/svg/Podcast-icon.vue';
 
     export default {
         name: 'VkFooter',
 
-        components : {
-            VkShare
-        },
-        computed : {
-            vkhomelink() {
-                return `https://www.volkskrant.nl/?utm_source=kijkverder&utm_medium=special&utm_campaign=${this.shortname}`;
+        props: {
+            color: {
+                type: String,
+                default: '#ffffff'
+            },
+            background: {
+                type: String,
+                default: '#000000'
             }
         },
 
-        props : {
-            credits: {
-                type: String,
-                default: 'please enter credits'
-            },
+        components : {
+            VkLogo,
+            TwitterIcon,
+            FacebookIcon,
+            InstagramIcon,
+            SoundcloudIcon,
+            PodcastIcon
+        },
 
-            cta: {
-                type: String,
-                default: 'please enter cta'
-            },
-
-            facebookIcon: {
-                type: String,
-                default: '~/assets/img/icon-facebook.svg'
-            },
-
-            mailIcon: {
-                type: String,
-                default: '~/assets/img/icon-mail.svg'
-            },
-
-            pagetitle: {
-                type: String,
-                default: pagetitle
-            },
-
-            shortname: {
-                type: String,
-                default: shortname
-            },
-
-            twitterIcon: {
-                type: String,
-                default: '~/assets/img/icon-twitter.svg'
-            },
-
-            url: {
-                type: String,
-                default: pageurl
+        computed : {
+            ...mapState(['meta']),
+            footerBackground() {
+                return {
+                    background: this.background
+                }
             }
         }
     }
