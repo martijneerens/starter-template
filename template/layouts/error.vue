@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <vk-header></vk-header>
+        <vk-nav />
         <h1 v-if="error.statusCode === 404">Deze pagina kan niet worden gevonden</h1>
         <div v-else>
             <h1>Er is een probleem opgetreden:</h1>
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-    import VkHeader from '~/components/Header.vue';
+    import VkNav from '~/components/Vk-nav.vue';
 
     export default {
         props: ['error'],
         layout: 'defafult',
         components: {
-            VkHeader
-        },
+            VkNav
+        }
     }
 </script>
