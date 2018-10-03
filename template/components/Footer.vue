@@ -9,8 +9,8 @@
        <img src="~/assets/img/footerdivider.png" class="footer-divider">
 
        <div class="footer-subscribe">
-           <div class="subscribe-text" v-html="meta.footercta"></div>
-           <a class="subscribe-link" href="" target="_blank">{{meta.cta}}</a>
+           <p class="subscribe-text">{{meta.cta}}</p>
+           <a class="subscribe-link" :href="meta.footer_credits" target="_blank">{{meta.footercta}}</a>
        </div>
 
        <img src="~/assets/img/footerdivider.png" class="footer-divider">
