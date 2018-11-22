@@ -102,9 +102,11 @@ module.exports = {
         baseURL: (process.env.NODE_ENV === 'production') ? './' : 'http://localhost:3000/'
     },
 
-    // proxy:{
-    //
-    // },
+    proxy: {
+        // Simple proxy
+        '/directus/': {target: 'https://labs.volkskrant.nl/'}
+
+    },
 
     'google-analytics': {
         id: 'UA-47135003-2'
