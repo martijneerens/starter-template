@@ -1,13 +1,38 @@
 import Vuex from 'vuex';
 
 const createStore = () => {
+
+    let setLoadingTimout = null;
+    let useDirectus = false;
+
+    if (typeof window === 'undefined') {
+        //not in browser, don't check for query params
+    }
+    else {
+        useDirectus = (window.location.href.indexOf('live') > -1);
+    }
+
     return new Vuex.Store({
         state: {
+            isLoading: false,
             items: [],
-            meta: {}
+            meta: {},
+            dataLoaded: false,
+            useDirectus: useDirectus
         },
 
         mutations: {
+            setLoading(state, isLoading) {
+                clearTimeout(setLoadingTimout);
+                setLoadingTimout = setTimeout(() => {
+                    state.isLoading = isLoading;
+                }, 100)
+            },
+
+            setLoaded(state, loaded) {
+                state.dataLoaded = loaded;
+            },
+
             setItems(state, items) {
                 state.items = items;
             },
@@ -24,6 +49,10 @@ const createStore = () => {
 
             setMeta(vuexContext, meta) {
                 vuexContext.commit('setMeta', meta);
+            },
+
+            setLoaded(vueContext, loaded) {
+                vuexContext.commit('setLoaded', loaded);
             },
 
             async setData({commit}) {
