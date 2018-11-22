@@ -13,7 +13,7 @@ dsdownload({
     baseUrl: 'https://labs.volkskrant.nl',
     apiUrl: 'https://labs.volkskrant.nl/directus/',
     mediaBookPath: 'media/', // And this is used for replacing
-    useImageObjects: false, //return full directus file object instead of the url as a string only
+    useImageObjects: true, //return full directus file object instead of the url as a string only
     skipExistingFiles : true,
     prettifyJson: true,
     callback : function(){
