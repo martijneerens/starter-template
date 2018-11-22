@@ -19,6 +19,7 @@
     "@nuxtjs/dotenv": "^1.1.1",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/proxy": "^1.2.4",
+    "directus-sdk-javascript": "^2.15.0",
     "dotenv": "^6.0.0",
     "mdn-polyfills": "^5.9.0",
     "nuxt": "^1.0.0",
