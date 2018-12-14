@@ -63,7 +63,7 @@ module.exports = {
             {hid: 'twittersite', name: 'twitter:site', content: '@volkskrant'}
         ],
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+            {rel: 'icon', type: 'image/x-icon', href: 'favicon.ico'}
         ],
         script: [
             { innerHTML: '// Chartbeat\n' +
