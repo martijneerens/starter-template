@@ -17,7 +17,6 @@
 
 <script>
     import { mapState } from 'vuex';
-    import { track } from 'vklib';
 
     import VkNav from '~/components/Vk-nav.vue';
     import VkFooter from '~/components/Footer.vue';
@@ -44,7 +43,6 @@
 
         mounted() {
             this.mounted = true;
-            track.trackOnce(`${this.$route.name}-once`);
         }
 
     }
