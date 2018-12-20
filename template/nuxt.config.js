@@ -66,12 +66,7 @@ module.exports = {
             {rel: 'icon', type: 'image/x-icon', href: 'favicon.ico'}
         ],
         script: [
-            { innerHTML: '// Chartbeat\n' +
-                'window._sf_startpt = +new Date();\n' +
-                '\n' +
-                '// Our own tracking\n' +
-                'window.__headerstart__ = +new Date();\n',
-                body: false }
+
         ]
     },
 
@@ -85,8 +80,8 @@ module.exports = {
         // Doc: https://github.com/nuxt-community/proxy-module
         '@nuxtjs/proxy',
 
-        //Doc: https://github.com/nuxt-community/analytics-module
-        '@nuxtjs/google-analytics',
+        // Doc: https://github.com/nuxt-community/modules/tree/master/packages/google-tag-manager
+        '@nuxtjs/google-tag-manager',
 
         // Access to environment
         '@nuxtjs/dotenv',
@@ -108,10 +103,18 @@ module.exports = {
 
     },
 
-    'google-analytics': {
-        id: 'UA-47135003-2'
+    'google-tag-manager': {
+        id: 'GTM-TPHZL7D',
+        // layer: 'dataLayer',
+        pageTracking: true,
+        // query: {
+        //     // query params...
+        //     gtm_auth:        '...',
+        //     gtm_preview:     '...',
+        //     gtm_cookies_win: '...'
+        // },
+        // scriptURL: '//example.com'
     },
-
 
     /*
     ** Global CSS

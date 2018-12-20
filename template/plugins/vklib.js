@@ -9,6 +9,6 @@ if(window && window.location && window.location.href){
 
 setupTouchClasses();
 
-track.init({
+/*track.init({
     debug : IS_DEBUG
-});
+});*/
