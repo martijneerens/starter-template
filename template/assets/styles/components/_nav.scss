@@ -1,32 +1,171 @@
-.vk-nav-top-wrapper {
-    @include wh(100vw, 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.top-navigation-wrapper {
+	@include wh(100%, 80px);
+	position: fixed;
+	top:0;
+	left:0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    overflow: hidden;
-    background: $white;
+	background: $white;
+	border-bottom: 1px solid #eaeaea;
+
+	z-index: 101;
+	transform:translate3d(0,0,0);
+
+	@include respond-until($screen-md) {
+		height: 70px;
+	}
+	@include respond-until($screen-xs) {
+		height: 60px;
+	}
 }
 
-.vk-nav-top {
-    @include wh(100%, 80px);
-    max-width: 120rem;
-    position: relative;
+.top-navigation {
+	@include wh(100%);
+	max-width: 140rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 
-    &__logo {
-        @include wh(200px, auto)
-    }
+	padding: 10px;
 
-    .vk-menu-toggle {
-        @include wh(30px);
-        position: absolute;
-        top: 30px;
-        right: 30px;
-    }
+	.header-left {
+		width: 35%;
+	}
+
+	a.header-logo {
+		position: relative;
+		margin-top: 0;
+		padding: 0rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+
+		.vk-logo-svg {
+			max-width: 300px;
+			width:auto;
+			height: 38px;
+			@include respond-until($screen-xs) {
+				height: 30px;
+				max-width: 200px;
+			}
+			@include respond-between($screen-xs, $screen-md) {
+				height: 30px;
+			}
+		}
+	}
+
+	.header-menu {
+		width: 35%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		align-content: center;
+		justify-content: center;
+		flex-wrap: nowrap;
+
+		.share-toggle {
+			@include wh(17px, 22px);
+			@include flex-center();
+			cursor: pointer;
+
+			@include respond-from($screen-sm) {
+				display:none;
+			}
+
+			svg {
+				@include wh(100%);
+			}
+		}
+
+		.share-inline {
+			@include wh(100%);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+
+			@include respond-until($screen-sm) {
+				display:none;
+			}
+
+			a, .sharebox-link {
+				width: 20px;
+				max-height: 25px;
+				height: auto;
+				overflow: hidden;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+
+				margin: 0 5px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.nav-modal {
+	position: absolute;
+	top: 59px;
+	@include wh(100%, 140px);
+	overflow: hidden;
+	border-bottom: 1px solid #eaeaea;
+	background: $white;
+
+	@include respond-until($screen-xs) {
+		top: 49px;
+	}
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.nav-modal-icons {
+		@include wh(100%, 60px);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			@include wh(55px);
+			margin: 0 7.5px;
+			svg {
+				@include wh(100%);
+			}
+		}
+	}
+
+	.nav-modal-link {
+		@include wh(100%, 40px);
+		margin-top: 5px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		font-family: $font-benton;
+		font-weight: 300;
+		font-size: 1rem;
+		text-decoration: underline;
+		cursor: pointer;
+
+		svg {
+			@include wh(17px);
+			margin-right: 5px;
+		}
+	}
 }

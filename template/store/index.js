@@ -1,3 +1,4 @@
+import axios from 'axios';
 export const strict = false;
 
 let setLoadingTimout = null;
@@ -53,7 +54,7 @@ export const actions = {
 
     async setData({commit}) {
         if (!useDirectus) {
-            const data = await this.$axios.get(`data/data.json`);
+            const data = await axios.get(`data/data.json`);
 
             commit('setItems', data.data.{{ directus_table }});
             commit('setMeta', data.data.meta);

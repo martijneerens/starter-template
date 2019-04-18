@@ -1,16 +1,35 @@
 .page-enter-active, .page-leave-active {
-  transition: opacity .2s;
+	transition: opacity .2s;
 }
 .page-enter, .page-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 
 
 .fade-enter-active, .fade-leave-active {
-  transition: all .5s;
-  transform: translateY(0px);
+	transition: all .5s;
+	transform: translateY(0px);
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity:0;
-  transform: translateY(50px);
+	opacity:0;
+	transform: translateY(50px);
+}
+
+
+.fademodal-enter-active, .fademodal-leave-active {
+	transition: all .5s;
+	transform: translateY(0px);
+}
+.fademodal-enter, .fademodal-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity:0;
+	transform: translateY(-10px);
+}
+
+.drawer-enter-active, .drawer-leave-active {
+	transition: all 1s;
+	transform: translateY(0px);
+}
+.drawer-enter, .drawer-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity:0;
+	transform: translateY(100vh);
 }
