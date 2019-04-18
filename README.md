@@ -17,6 +17,8 @@ $ vue init martijneerens/vk-nuxt-template my-project
 $ cd my-project                     
 # install dependencies
 $ npm install # Or yarn install
+# Download data 
+$ npm run fetch # Or yarn fetch
 ```
 
 > Make sure to use a version of vue-cli >= 2.1 (`vue -V`).
