@@ -52,8 +52,6 @@ export const actions = {
     },
 
     async setData({commit}) {
-        let useDirectus = this.state.useDirectus;
-
         if (!useDirectus) {
             const data = await this.$axios.get(`data/data.json`);
 
