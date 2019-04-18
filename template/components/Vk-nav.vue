@@ -102,10 +102,10 @@
             ]),
 
             slug() {
-                if(this.page.year) {
-                    return `https://www.volkskrant.nl/kijkverder/${this.page.year}/${this.page.slug}`
+                if(this.meta.year) {
+                    return `https://www.volkskrant.nl/kijkverder/${this.meta.year}/${this.meta.slug}`
                 } else {
-                    return `https://www.volkskrant.nl/kijkverder/${this.page.slug}`
+                    return `https://www.volkskrant.nl/kijkverder/${this.meta.slug}`
                 }
             },
 

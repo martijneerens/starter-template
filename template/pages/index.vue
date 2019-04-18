@@ -4,14 +4,10 @@
 
         <main class="content">
             <h1 class="title" v-html="meta.title"></h1>
-            <h2 class="lead" v-html="meta.lead"></h2>
+            <p class="lead" v-html="meta.lead"></p>
         </main>
 
-        <vk-footer
-                :credits="meta.credits"
-                :cta="meta.cta"
-                :shortname="meta.name"
-                :pagetitle="meta.title" />
+        <vk-footer />
     </section>
 </template>
 
