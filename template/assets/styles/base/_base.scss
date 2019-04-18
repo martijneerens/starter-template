@@ -1,17 +1,5 @@
 // Set REM here
 
-html {
-    font-size: $font-size-base;
-
-    @include respond-until($screen-sm) {
-        font-size: $font-size-small;
-    }
-
-    @media (max-height: $screen-small-height) {
-        font-size: $font-size-small;
-    }
-}
-
 body {
   overflow-x: hidden;
   font-family: $font-serif-text;

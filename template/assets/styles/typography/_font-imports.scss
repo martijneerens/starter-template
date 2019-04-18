@@ -1,0 +1,31 @@
+$font-dir: '../fonts/';
+
+@each $id, $weight, $style in $benton-font {
+  @font-face {
+    font-family: 'Benton';
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$font-dir}BentonSans#{$id}.woff2') format('woff2'),
+    url('#{$font-dir}BentonSans#{$id}.woff') format('woff');
+  }
+}
+
+@each $id, $weight, $style in $capitolium-head-font {
+  @font-face {
+    font-family: 'Capitolium Head';
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$font-dir}CapitoliumHead#{$id}.woff2') format('woff2'),
+    url('#{$font-dir}CapitoliumHead#{$id}.woff') format('woff');
+  }
+}
+
+@each $id, $weight, $style in $capitolium-news-font {
+  @font-face {
+    font-family: 'Capitolium News';
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$font-dir}CapitoliumNews#{$id}.woff2') format('woff2'),
+    url('#{$font-dir}CapitoliumNews#{$id}.woff') format('woff');
+  }
+}

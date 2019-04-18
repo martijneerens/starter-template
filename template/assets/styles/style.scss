@@ -6,7 +6,7 @@
 @import "base/fonts";
 @import "colors";
 @import "base/mixins";
-@import "base/typography";
+@import "typography/style";
 @import "base/base";
 
 // Styling for fixed components
@@ -20,8 +20,3 @@
 @import "footer";
 @import "transitions";
 @import "screen-home";
-
-// TO BE FIXED: ADD THESE ELEMENTS
-
-//@import "../../node_modules/vklib/vue/vk-cta";
-//@import "../../node_modules/vklib/vue/vk-feedback";

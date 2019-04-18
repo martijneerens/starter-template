@@ -1,0 +1,97 @@
+// Do a reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Basic styling
+
+body {
+  overflow-x: hidden;
+
+  /* Better Font Rendering =========== */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  position: relative;
+  box-sizing:border-box;
+}
+
+// These elements don't inherit the font styles by default
+
+input, select, textarea, button {
+  font: inherit;
+}
+
+img {
+  border: 0; // Be kind for IE9
+}
+
+//home screen
+.container {
+  @include wh(100%, auto);
+  min-height: 100vh;
+  @include flex-center();
+}
+
+.typography-container {
+  @include wh(100%, auto);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 60rem;
+  padding: $spacing;
+
+  @include respond-until($screen-sm) {
+    padding: #{0.25 * $spacing}
+  }
+}
+
+.disclaimer {
+  @include wh(100%, auto);
+  max-width: 1000px;
+  @include flex-center();
+  text-align: center;
+  padding-top: 20px;
+}
+
+figure {
+  @include wh(100%, auto);
+  max-width: 80rem;
+  @include flex-center();
+  overflow: hidden;
+  margin: 30px 0;
+
+  img {
+    @include wh(100%, auto);
+  }
+}
+
+.code-toggle {
+  background: #ff4664;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin: #{0.5 * $spacing};
+  opacity: 0.8;
+  cursor: pointer;
+  font-family: $font-benton;
+  font-size: 14px;
+}
+
+.button-code-active {
+  background: #0bb64b;
+}
+
+form {
+  legend, label {
+    margin: 5px;
+  }
+}

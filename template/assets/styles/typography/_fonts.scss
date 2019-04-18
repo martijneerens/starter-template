@@ -1,0 +1,37 @@
+$weight-light: 100;
+
+// Fonts
+$font-benton: 'Benton', 'Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+$font-capitolium-head: 'Capitolium Head', 'TimesNewRoman', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', 'serif';
+$font-capitolium-news: 'Capitolium News', 'TimesNewRoman', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', 'serif';
+$font-fallback: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-serif-text: $font-capitolium-news;
+$font-serif-header: $font-capitolium-head;
+$font-sansserif: $font-benton;
+
+$benton-font: (
+                (Light, $weight-light, normal),
+                (Book, normal, normal),
+                (Italic, normal, italic),
+                (Bold, bold, normal),
+                (BoldItalic, bold, italic)
+);
+
+$capitolium-head-font: (
+                (Bold, bold, normal),
+                (Light, $weight-light, normal),
+                (Reg, normal, normal)
+);
+
+$capitolium-head-font: (
+                (Bold, bold, normal),
+                (Light, $weight-light, normal),
+                (Reg, normal, normal)
+);
+
+$capitolium-news-font: (
+                (Bold, bold, normal),
+                (BoldItalic, bold, italic),
+                (Italic, normal, italic),
+                (Reg, normal, normal)
+);

@@ -1,0 +1,228 @@
+// Many thanks and credits to Thijs Gadiot for his work on compiling typography using sass typograms
+
+/*
+// Hoe het werkt
+.testcase {
+	@include typogram($b4);
+}*/
+
+
+// Set up a global typogram variable
+$typogram-names: (h1,h2,h3,h4,body,header,button,quote,caption,lead,credits, note, alt, dropcap);
+
+// define base sizes, equals 1em.
+$base-size: 18;
+$base-size-px: 18px;
+$default-line-height: 1.2em;
+
+// define breakpoints used for responsive typography
+// TAKEN FROM VK BREAKPOINTS FILE
+$breakpoints: (
+        small : $screen-xs,
+        medium: $screen-sm,
+        large : $screen-md
+);
+
+//
+// TYPOGRAMMEN, zelfde als in de VK website
+//
+
+// h1			– Capitolium, 30px/42px -> Production title
+$h1-font-family: $font-capitolium-head;
+$h1-font-sizes: (
+        null  : (get-rems(30), 1.1),
+        small : (get-rems(30), 1.1),
+        medium: (get-rems(42), 1.07),
+        large : (get-rems(42), 1.07),
+);
+$h1: (
+        style : $h1-font-family,
+        sizes : $h1-font-sizes
+);
+
+// h3			– Benton 19px/20px -> Subheadings
+$h3-font-family: $font-benton;
+$h3-font-sizes: (
+        null  : (get-rems(19), 1.21),
+        small : (get-rems(19), 1.21),
+        medium: (get-rems(20), 1.2),
+        large : (get-rems(20), 1.2),
+);
+$h3: (
+        style : $h3-font-family,
+        sizes : $h3-font-sizes
+);
+
+// h4			– Benton 14px -> Labels
+$h4-font-family: $font-benton;
+$h4-font-sizes: (
+        null  : (get-rems(14), 1.43),
+        small : (get-rems(14), 1.43),
+        medium: (get-rems(14), 1.43),
+        large : (get-rems(14), 1.43),
+);
+$h4: (
+        style : $h4-font-family,
+        sizes : $h4-font-sizes
+);
+
+// Body		– Capitolium News 19px/20px
+$body-font-family: $font-capitolium-news;
+$body-font-sizes: (
+        null  : (get-rems(19), 1.37),
+        small : (get-rems(19), 1.37),
+        medium: (get-rems(20), 1.5),
+        large : (get-rems(20), 1.5),
+);
+$body: (
+        style : $body-font-family,
+        sizes : $body-font-sizes
+);
+
+$caption-font-family: $font-benton;
+$caption-font-sizes: (
+        null  : (get-rems(13), 1.08),
+        small : (get-rems(13), 1.08),
+        medium: (get-rems(13), 1.08),
+        large : (get-rems(13), 1.08),
+);
+$caption: (
+        style : $caption-font-family,
+        sizes : $caption-font-sizes
+);
+
+$lead-font-family: $font-capitolium-head;
+$lead-font-sizes: (
+        null  : (get-rems(22), 1.13),
+        small : (get-rems(22), 1.13),
+        medium: (get-rems(24), 1.14),
+        large : (get-rems(24), 1.14),
+);
+$lead: (
+        style : $lead-font-family,
+        sizes : $lead-font-sizes
+);
+
+$credits-font-family: $font-benton;
+$credits-font-sizes: (
+        null  : (get-rems(16), 1),
+        small : (get-rems(16), 1),
+        medium: (get-rems(16), 1),
+        large : (get-rems(16), 1),
+);
+$credits: (
+        style : $credits-font-family,
+        sizes : $credits-font-sizes
+);
+
+$note-font-family: $font-benton;
+$note-font-sizes: (
+        null  : (get-rems(14), 1.5),
+        small : (get-rems(14), 1.5),
+        medium: (get-rems(15), 1.53),
+        large : (get-rems(15), 1.53),
+);
+$note: (
+        style : $note-font-family,
+        sizes : $note-font-sizes
+);
+
+//
+// TYPOGRAMMEN, specifiek voor Kijk Verder (wel gebaseerd op de UI styleguide van de website)
+//
+
+// h2			– 30px, 32px -> Kleinere titelstijl voor visualisaties
+$h2-font-family: $font-capitolium-head;
+//$h2-leading: line-height(100,108);
+$h2-font-sizes: (
+        null  : (get-rems(30), 1.1),
+        small : (get-rems(30), 1.1),
+        medium: (get-rems(32), 1.07),
+        large : (get-rems(32), 1.07),
+);
+$h2: (
+        style : $h2-font-family,
+        sizes : $h2-font-sizes
+);
+
+// Button         - Benton 13px/15px
+$button-font-family: $font-benton;
+$button-font-sizes: (
+        null  : (get-rems(13), 1.2),
+        small : (get-rems(13), 1.2),
+        medium: (get-rems(15), 1.2),
+        large : (get-rems(15), 1.2),
+);
+$buttontype: (
+        style : $button-font-family,
+        sizes : $button-font-sizes
+);
+
+// Blockquote
+$quote-font-family: $font-capitolium-news;
+$quote-font-sizes: (
+        null  : (get-rems(20), 1.2),
+        small : (get-rems(20), 1.2),
+        medium: (get-rems(22), 1.21),
+        large : (get-rems(22), 1.21),
+);
+$quote: (
+        style : $quote-font-family,
+        sizes : $quote-font-sizes
+);
+
+// alt  		– Voor labels, en alle tekstjes die anders moeten maar geen note of caption zijn
+$alt-font-family: $font-benton;
+$alt-font-sizes: (
+        null  : (get-rems(16), 1.2),
+        small : (get-rems(16), 1.2),
+        medium: (get-rems(18), 1.37),
+        large : (get-rems(18), 1.37),
+);
+$alt: (
+        style : $alt-font-family,
+        sizes : $alt-font-sizes
+);
+
+// dropcap 		– Voor dropcaps
+$dropcap-font-family: $font-capitolium-head;
+$dropcap-font-sizes: (
+        null  : (get-rems(92), 0.67),
+        small : (get-rems(92), 0.67),
+        medium: (get-rems(192), 0.7),
+        large : (get-rems(192), 0.7),
+);
+$dropcap: (
+        style : $dropcap-font-family,
+        sizes : $dropcap-font-sizes
+);
+
+//
+// TYPOGRAMMEN, nog vrij
+//
+
+// h5			– Kopie van tussenkopje h3
+$h5-font-family: $font-benton;
+$h5-font-sizes: (
+        null  : (get-rems(19), 1.21),
+        small : (get-rems(19), 1.21),
+        medium: (get-rems(20), 1.2),
+        large : (get-rems(20), 1.2),
+);
+$h5: (
+        style : $h5-font-family,
+        sizes : $h5-font-sizes
+);
+
+// h6			– Kopie van tussenkopje h3
+$h6-font-family: $font-benton;
+$h6-font-sizes: (
+        null  : (get-rems(19), 1.21),
+        small : (get-rems(19), 1.21),
+        medium: (get-rems(20), 1.2),
+        large : (get-rems(20), 1.2),
+);
+$h6: (
+        style : $h6-font-family,
+        sizes : $h6-font-sizes
+);

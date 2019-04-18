@@ -1,0 +1,124 @@
+//base typography, only html elements, no specific classes
+
+// base size, equals 1em.
+$base-size: 18;
+$base-size-px: 18px;
+$default-line-height: 1.4em;
+
+html, body {
+  font-size: $base-size+px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+  @include typogram($body);
+}
+
+p {
+  @include typogram($body);
+  font-weight: normal;
+  letter-spacing: -0.07px;
+  margin-bottom: 30px;
+}
+
+ul, ol {
+  list-style-position: inside;
+  margin-bottom: 30px;
+
+  li {
+    @include typogram($body);
+    font-weight: normal;
+    letter-spacing: -0.07px;
+  }
+}
+
+table {
+  @include typogram($note);
+}
+
+h1 {
+  @include typogram($h1);
+  font-weight: normal;
+  @include respond-until($screen-md) {
+    letter-spacing: -.2px;
+  }
+  letter-spacing: -.5px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  @include typogram($h2);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+h3 {
+  @include typogram($h3);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+h4 {
+  @include typogram($h4);
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+h5 {
+  @include typogram($h5);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+h6 {
+  @include typogram($h6);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a{
+    text-decoration: underline;
+  }
+}
+
+figcaption {
+  width: 100%;
+  @include typogram($caption);
+  font-weight: bold;
+  letter-spacing: -0.14px;
+  margin-top: 8px;
+
+  .caption-credits {
+    font-weight: 300;
+    color: #9b9b9b;
+  }
+}
+
+blockquote {
+  @include typogram($quote);
+}
+
+form {
+  legend, p, label, input, select, option {
+    @include typogram($credits);
+  }
+}
+
+code {
+  background: #eee;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin: 0 5px;
+  font-size: 20px;
+  text-transform: lowercase;
+}

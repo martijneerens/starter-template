@@ -1,0 +1,61 @@
+// Here you find the classes that you can append to standard HTML elements to get that specific VK look. Everything is in here, except for the specific subheading elements, which have their respective SASS within their components
+
+// Top labels, as found on the VK Website
+.top-label {
+  width: 100%;
+  margin-bottom: 4px;
+
+  @include respond-from($screen-sm) {
+    margin-bottom: 10px;
+  }
+
+  &-type {
+    font-weight: bold;
+  }
+}
+
+// Lead and title, as found on the VK Website
+.lead {
+  @include typogram($lead);
+  letter-spacing: -.1px;
+  font-weight: 300;
+  margin: 22px 0 20px;
+  @include respond-from($screen-sm) {
+    margin: 24px 0 20px;
+  }
+}
+
+.credits {
+  @include typogram($credits);
+  margin: 20px 0 30px;
+  @include respond-from($screen-sm) {
+    margin: 20px 0 50px;
+  }
+
+  time {
+    margin-left: 2px;
+    font-weight: 300
+  }
+}
+
+.note {
+  @include typogram($note)
+}
+
+.code-small {
+  font-size: 1.5rem;
+}
+
+.show-dropcap:first-of-type::first-letter {
+  @include typogram($dropcap);
+  font-weight: 300;
+  padding-top: 11px;
+  padding-right: 10px;
+  float: left;
+
+  @include respond-from($screen-sm) {
+    padding-top: 16px;
+    padding-left: 2px;
+    padding-right: 18px;
+  }
+}
