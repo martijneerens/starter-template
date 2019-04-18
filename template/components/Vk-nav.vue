@@ -5,7 +5,7 @@
 			</div>
 			
 			<a class="header-logo"
-			   :href="`https://www.volkskrant.nl/?utm_source=kijkverder&utm_medium=special&utm_campaign=${page.slug}`">
+			   href="https://www.volkskrant.nl/">
 				<vk-logo></vk-logo>
 			</a>
 			
@@ -97,9 +97,7 @@
         },
 
         computed: {
-            ...mapState([
-                'page', 'meta'
-            ]),
+            ...mapState(['meta']),
 
             slug() {
                 if(this.meta.year) {
