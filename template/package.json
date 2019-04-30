@@ -31,7 +31,7 @@
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.1",
     "cross-env": "^5.0.1",
-    "directus-download": "git+https://github.com/martijneerens/directus-download.git#semver:^v1.0.13",
+    "directus-download": "martijneerens/directus-download",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
