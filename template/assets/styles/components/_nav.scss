@@ -110,6 +110,11 @@
 
 				margin: 0 5px;
 				cursor: pointer;
+
+				svg {
+					@include wh(100%, auto);
+					max-height: 20px;
+				}
 			}
 		}
 	}
