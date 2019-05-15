@@ -104,7 +104,7 @@ module.exports = {
     },
 
     'google-tag-manager': {
-        id: 'GTM-TPHZL7D',
+        id: (process.env.NODE_ENV === 'production') ? 'GTM-TPHZL7D' : null,
         // layer: 'dataLayer',
         pageTracking: true,
         // query: {
