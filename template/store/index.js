@@ -15,7 +15,8 @@ export const state = () => ({
     items: [],
     meta: {},
     dataLoaded: false,
-    useDirectus: useDirectus
+    useDirectus: useDirectus,
+    analytics: []
 });
 
 export const mutations = {

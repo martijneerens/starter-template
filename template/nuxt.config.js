@@ -85,6 +85,9 @@ module.exports = {
 
         // Access to environment
         '@nuxtjs/dotenv',
+
+        // analytics
+        '@nuxtjs/google-analytics'
     ],
 
     /*
@@ -106,7 +109,7 @@ module.exports = {
     'google-tag-manager': {
         id: (process.env.NODE_ENV === 'production') ? 'GTM-TPHZL7D' : null,
         // layer: 'dataLayer',
-        pageTracking: true,
+        pageTracking: false,
         // query: {
         //     // query params...
         //     gtm_auth:        '...',
@@ -114,6 +117,14 @@ module.exports = {
         //     gtm_cookies_win: '...'
         // },
         // scriptURL: '//example.com'
+    },
+
+    'google-analytics': {
+        id: 'UA-100383833-5',
+        // debug: {
+        //     enabled: true,
+        //     sendHitTask: true
+        // }
     },
 
     /*
@@ -129,7 +140,8 @@ module.exports = {
     plugins: [
         { src: '~/plugins/polyfills', ssr: false },
         { src: '~/plugins/vklib', ssr: false },
-        { src: '~/plugins/axios', ssr: false }
+        { src: '~/plugins/axios', ssr: false },
+        {src: '~/plugins/log-event', ssr: false}
     ],
 
     /*
