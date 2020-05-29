@@ -72,6 +72,8 @@
     import TwitterModalIcon from '~/components/svg/nav-modal/twitter.vue';
     import MailModalIcon from '~/components/svg/nav-modal/mail.vue';
     import WhatsappModalIcon from '~/components/svg/nav-modal/whatsapp.vue';
+    
+    import copyToClipboard from "~/utils/clipboard";
 
     export default {
         name: 'Header',
@@ -118,18 +120,7 @@
             },
 
             writeToClipboard() {
-                navigator.permissions.query({name: "clipboard-write"}).then(result => {
-                    if (result.state == "granted" || result.state == "prompt") {
-                        let url = this.slug;
-
-                        navigator.clipboard.writeText(url)
-                            .then( () => {
-                                alert('Link naar plakbord gekopieerd!')
-                            }, () => {
-                                console.log('Er ging iets fout bij het kopiëren van de link')
-                            })
-                    }
-                })
+				copyToClipboard(this.slug)
             }
         }
     }
