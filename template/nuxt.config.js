@@ -87,7 +87,9 @@ module.exports = {
         '@nuxtjs/dotenv',
 
         // analytics
-        '@nuxtjs/google-analytics'
+        '@nuxtjs/google-analytics',
+
+        ['volkskrant-kijkverder-nuxt-paygate', {paygate: true}]
     ],
 
     /*

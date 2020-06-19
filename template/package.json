@@ -25,7 +25,8 @@
     "nuxt": "^2.6.2",
     "nuxt-social-meta": "^0.0.1",
     "valenski": "^1.3.0",
-    "vklib": "git+ssh://git@bitbucket.org/persgroep/vklib.git#semver:^v3.13.10"
+    "vklib": "git+ssh://git@bitbucket.org/persgroep/vklib.git#semver:^v3.13.10",
+    "volkskrant-kijkverder-nuxt-paygate": "git+ssh://git@bitbucket.org/persgroep/volkskrant-kijkverder-nuxt-paygate.git#semver:^v1.1.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",

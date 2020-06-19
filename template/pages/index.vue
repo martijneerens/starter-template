@@ -5,6 +5,8 @@
         <main class="content">
             <h1 class="title" v-html="meta.title"></h1>
             <p class="lead" v-html="meta.lead"></p>
+            
+            <temptation />
         </main>
 
         <vk-footer />
